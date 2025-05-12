@@ -59,7 +59,7 @@ function sayHello() {
 
 sayHello();
 
-const sayWorld = function(){
+let sayWorld = function() {
   console.log("World");
 };
 
@@ -67,26 +67,26 @@ sayWorld();
 
 // Q7
 user.birthday = "2000-09-27";
-user.sayHello = function(){
+user.sayHello = function() {
   console.log("Hello!");
 };
 
 user.sayHello();
 
 // Q8
-let calc = {
-  add: function(x, y){
+let calc = {};
+
+calc.add = function(x, y) {
     console.log(x + y);
-  },
-  subtract: function(x, y){
+};
+calc.subtract = function(x, y) {
     console.log(x - y);
-  },
-  multiply: function(x, y){
+};
+calc.multiply = function(x, y) {
     console.log(x * y);
-  },
-  divide: function(x, y){
+};
+calc.divide = function(x, y) {
     console.log(x / y);
-  }
 };
 
 calc.add(2, 5);
@@ -108,43 +108,44 @@ console.log(5 + " を " + 3 + " で割った余りは " + remainder(5, 3) + " �
 // console.log(x);
 //
 // 関数fooで変数xが定義されているので
-// console.logの時にスコープ外になっていてxを参照できていないため。
+// console.logの時にスコープの範囲外になっていてxを参照できていないため。
 
 // 応用問題
 // Q1 0~9のランダムの整数の表示
 console.log(Math.floor(Math.random() * 10));
 
 // Q2 3秒後にコンソールに表示
-window.setTimeout(function(){
+window.setTimeout(function() {
   console.log("Hello World!");
 }, 3000);
 
 // Q3
 let num = 0;
-if (num > 0){
+
+if (num > 0) {
   console.log("num is greater than 0");
 } else if (num < 0){
   console.log("num is less than 0");
 } else {
   console.log("num is 0");
-}
+};
 
 // Q4
 let numbers = [];
 
-for(let i = 0; i < 100; i++){
+for(let i = 0; i < 100; i++) {
   numbers[i] = i;
-}
+};
 
 console.log(numbers);
 
 // Q5
 let mixed = [4, "2", 5, "8", "9", 0, 1];
 
-for(let i = 0; i < mixed.length; i++){
-  if(Number.isFinite(mixed[i]) === false){
+for(let i = 0; i < mixed.length; i++) {
+  if(Number.isFinite(mixed[i]) === false) {
     console.log("not number");
-  } else if(mixed[i] % 2 === 0){
+  } else if(mixed[i] % 2 === 0) {
     console.log("even");
   } else {
     console.log("odd");
